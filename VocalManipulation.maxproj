@@ -2,7 +2,7 @@
 	"name" : "VocalManipulation",
 	"version" : 1,
 	"creationdate" : 3719856264,
-	"modificationdate" : 3719856287,
+	"modificationdate" : 3719949064,
 	"viewrect" : [ 430.0, 362.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -14,6 +14,11 @@
 				"kind" : "patcher",
 				"local" : 1,
 				"toplevel" : 1
+			}
+,
+			"FFT-Processor.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
 			}
 
 		}
