@@ -40,6 +40,104 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"format" : 6,
+					"id" : "obj-12",
+					"maxclass" : "flonum",
+					"maximum" : 1.0,
+					"minimum" : 0.0,
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 428.0, 444.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-13",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 374.0, 444.0, 29.5, 22.0 ],
+					"text" : "*~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"basictuning" : 440,
+					"clipheight" : 58.0,
+					"data" : 					{
+						"clips" : [ 							{
+								"absolutepath" : "anton.aif",
+								"filename" : "anton.aif",
+								"filekind" : "audiofile",
+								"id" : "u207002122",
+								"loop" : 1,
+								"content_state" : 								{
+									"loop" : 1
+								}
+
+							}
+, 							{
+								"absolutepath" : "cherokee.aif",
+								"filename" : "cherokee.aif",
+								"filekind" : "audiofile",
+								"id" : "u723002224",
+								"loop" : 1,
+								"content_state" : 								{
+									"loop" : 1
+								}
+
+							}
+, 							{
+								"absolutepath" : "drumLoop.aif",
+								"filename" : "drumLoop.aif",
+								"filekind" : "audiofile",
+								"id" : "u792002306",
+								"loop" : 1,
+								"content_state" : 								{
+									"loop" : 1
+								}
+
+							}
+, 							{
+								"absolutepath" : "prim.loop.aif",
+								"filename" : "prim.loop.aif",
+								"filekind" : "audiofile",
+								"id" : "u883002418",
+								"loop" : 1,
+								"content_state" : 								{
+									"loop" : 1
+								}
+
+							}
+ ]
+					}
+,
+					"followglobaltempo" : 0,
+					"formantcorrection" : 0,
+					"id" : "obj-11",
+					"maxclass" : "playlist~",
+					"mode" : "basic",
+					"numinlets" : 1,
+					"numoutlets" : 5,
+					"originallength" : [ 0.0, "ticks" ],
+					"originaltempo" : 120.0,
+					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 492.0, 173.0, 443.0, 236.0 ],
+					"pitchcorrection" : 0,
+					"quality" : "basic",
+					"timestretch" : [ 0 ],
+					"waveformdisplay" : 0
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"attr" : "waveformdisplay",
 					"id" : "obj-10",
 					"maxclass" : "attrui",
@@ -153,8 +251,8 @@
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "signal" ],
 					"patching_rect" : [ 31.0, 676.0, 148.0, 22.0 ],
 					"text" : "pfft~ FFT-Processor 512 4"
 				}
@@ -329,6 +427,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-78",
+									"int" : 1,
 									"maxclass" : "gswitch2",
 									"numinlets" : 2,
 									"numoutlets" : 2,
@@ -676,6 +775,22 @@
 				"patchline" : 				{
 					"destination" : [ "obj-91", 1 ],
 					"order" : 0,
+					"source" : [ "obj-1", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-91", 0 ],
+					"order" : 1,
+					"source" : [ "obj-1", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-91", 1 ],
+					"order" : 0,
 					"source" : [ "obj-1", 0 ]
 				}
 
@@ -692,6 +807,27 @@
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
 					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-13", 0 ],
+					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-13", 1 ],
+					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 1 ],
+					"source" : [ "obj-13", 0 ]
 				}
 
 			}
