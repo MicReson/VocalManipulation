@@ -1,5 +1,3 @@
-## VocalManipulation (Work in Progress)
+# VocalManipulation (WIP)
 
------------------------
-
-Using time stretch, fft and more to manipulate sound, could be used for vocals or any other source.
+Experimentation with vocal manipulation using FFT.
